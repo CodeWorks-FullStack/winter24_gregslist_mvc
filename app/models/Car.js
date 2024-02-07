@@ -3,6 +3,7 @@ import { generateId } from "../utils/GenerateId.js"
 export class Car {
 
   constructor (data) {
+    // NOTE generateId is a utility function to generate a unique id. We can't use any value from this class as unique identifier, so we have to create our own
     this.id = generateId()
     this.make = data.make
     this.model = data.model
@@ -15,6 +16,7 @@ export class Car {
     this.hasSalvagedTitle = data.hasSalvagedTitle
     // NOTE creates a new date object with the current date and time if no argument is passed to the date constructor
     // NOTE this date object has methods attached to it to format the date in various ways
+    // NOTE we have to check to see if the object being accessed here has a listedAt property before we pass it through the Date constructor. If the object does not have a listedAt property, it will be undefined when we try to access it, so we create a brand new Date. Otherwise, we turn it into a Date object using the listedAt coming from local storage
     this.listedAt = data.listedAt == undefined ? new Date() : new Date(data.listedAt)
   }
 
