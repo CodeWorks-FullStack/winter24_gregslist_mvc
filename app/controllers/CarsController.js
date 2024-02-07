@@ -41,9 +41,9 @@ export class CarsController {
       // @ts-ignore
       console.log('car make', form.make.value); //NOTE how we pull individual values out of the form
 
-      const carFormData = getFormData(form) //NOTE getFormData will pull all input fields with a name attribute on them and build an object for us
+      const carFormData = getFormData(form) //NOTE getFormData will pull all input fields values with a name attribute on them and build an object for us
 
-      // NOTE converts "on" value to boolean
+      // NOTE converts "on" value to boolean from checkbox input
       carFormData.hasSalvagedTitle = carFormData.hasSalvagedTitle == 'on'
 
       // REVIEW always make sure that this object looks correct before casting it into a class model!

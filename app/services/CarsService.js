@@ -13,15 +13,17 @@ function _saveCarsInLocalStorage() {
 class CarsService {
 
   createCar(carFormData) {
-    // TODO do crazy stuff
 
+    // NOTE convert pojo from our form into our class model
     const newCarModel = new Car(carFormData)
 
     console.log('pojo', carFormData);
     console.log('NEW CAR', newCarModel);
 
+    // NOTE add to end of array, triggers listener by changing array length
     AppState.cars.push(newCarModel)
 
+    // NOTE whenever our array changes, we should update localstorage
     _saveCarsInLocalStorage()
   }
 
@@ -44,8 +46,10 @@ class CarsService {
     }
 
     // NOTE splice's first argument is where to start splicing, the second argument is how many items to take out after starting index
+    // NOTE splice will trigger listener by changing array length
     AppState.cars.splice(carIndex, 1)
 
+    // NOTE whenever our array changes, we should update localstorage
     _saveCarsInLocalStorage()
   }
 
