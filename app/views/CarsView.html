@@ -31,6 +31,7 @@
 
           <div class="mb-3">
             <label for="carYear">Year</label>
+            <!-- NOTE min and max attributes validate the range of a number for an input with type number-->
             <input id="carYear" name="year" type="number" required min="1900" max="2025" value="2024">
           </div>
 
@@ -46,21 +47,25 @@
 
           <div class="mb-3">
             <label for="carImgUrl">ImgUrl</label>
+            <!-- NOTE type url will validate that you are passing a url as a value -->
             <input id="carImgUrl" name="imgUrl" type="url" required maxlength="1000">
           </div>
 
           <div class="mb-3">
             <label for="carColor">Car Color</label>
+            <!-- NOTE color picker that supplies values we can use with css -->
             <input type="color" name="color" id="carColor" value="#e66465" />
           </div>
 
           <div class="mb-3">
             <label for="carDescription">Description of Car</label>
+            <!-- NOTE textarea is just a longer text input field -->
             <textarea id="carDescription" name="description" class="w-100" rows="10" maxlength="1000"></textarea>
           </div>
 
           <div class="mb-3">
             <label for="carSalvaged">Salvaged Title?</label>
+            <!-- NOTE type checkbox is good for booleans -->
             <input type="checkbox" name="hasSalvagedTitle" id="carSalvaged" name="carSalvaged" />
           </div>
 
