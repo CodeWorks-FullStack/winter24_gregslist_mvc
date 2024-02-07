@@ -1,6 +1,4 @@
 import { CarsController } from "./controllers/CarsController.js";
-import { ExamplesController } from "./controllers/ExamplesController.js";
-import { HomeController } from "./controllers/HomeController.js";
 import { Router } from "./utils/Router.js";
 
 
