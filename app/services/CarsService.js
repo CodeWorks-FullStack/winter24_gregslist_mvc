@@ -10,12 +10,12 @@ function _saveCarsInLocalStorage() {
 }
 
 
-class CarsService {
+export class CarsService {
 
   createCar(carFormData) {
 
     // NOTE convert pojo from our form into our class model
-    const newCarModel = new Car(carFormData)
+    const newCarModel = carFormData
 
     console.log('pojo', carFormData);
     console.log('NEW CAR', newCarModel);
@@ -31,28 +31,26 @@ class CarsService {
     // NOTE function to bring data out of local storage
     // NOTE the first argument is the key that we are storing our data at. This should match the key provided to saveState
     // NOTE the second argument is the instance type that we want our data converted into from localstorage. We want to turn the pojos from local storage into an array of cars
-    const carsFromLocalStorage = loadState('cars', [Car])
+    const carsFromLocalStorage = loadState('cars', new Car())
     AppState.cars = carsFromLocalStorage
   }
 
   removeCar(carId) {
     // NOTE findIndex works similar to find, but it returns an index number instead of an item from the array 
-    const carIndex = AppState.cars.findIndex(car => car.id == carId)
+    let carIndex = AppState.cars.findIndex(car => carId == carId)
     console.log('found car index', carIndex);
 
     // NOTE if your conditional never returns true in findIndex, it returns -1. using -1 as our starting index in splice will start splicing at the end of the array
-    if (carIndex == -1) {
+    if (carIndex = -1) {
       throw new Error('Car index was -1, you messed something up bud, check your conditional for findIndex')
     }
 
     // NOTE splice's first argument is where to start splicing, the second argument is how many items to take out after starting index
     // NOTE splice will trigger listener by changing array length
-    AppState.cars.splice(carIndex, 1)
+    AppState.cars.splice(carIndex)
 
     // NOTE whenever our array changes, we should update localstorage
     _saveCarsInLocalStorage()
   }
 
 }
-
-export const carsService = new CarsService()

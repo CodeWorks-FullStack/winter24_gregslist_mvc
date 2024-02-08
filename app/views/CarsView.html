@@ -21,12 +21,12 @@
             <!-- NOTE type attribute dictates the type of input you get -->
             <!-- NOTE required attribute validates that the user has filled out an input field before they can submit a form  -->
             <!-- NOTE minlength and maxlength will validate that the user inpuuted a string with the correct amount of characters -->
-            <input id="carMake" name="make" type="text" required minlength="3" maxlength="15">
+            <input id="carMake"  type="text" required minlength="3" maxlength="15">
           </div>
 
           <div class="mb-3">
             <label for="carModel">Model</label>
-            <input id="carModel" name="model" type="text" required minlength="1" maxlength="50">
+            <input id="carModel" type="text" required minlength="1" maxlength="50">
           </div>
 
           <div class="mb-3">
@@ -66,13 +66,13 @@
           <div class="mb-3">
             <label for="carSalvaged">Salvaged Title?</label>
             <!-- NOTE type checkbox is good for booleans -->
-            <input type="checkbox" name="hasSalvagedTitle" id="carSalvaged" name="carSalvaged" />
+            <input type="checkbox" required name="hasSalvagedTitle" id="carSalvaged" name="carSalvaged" />
           </div>
 
 
           <div class="text-end mb-3">
             <!-- NOTE important that we have a button with type of submit in order to trigger our onsubmit handler on the top of the form -->
-            <button type="submit">Submit</button>
+            <button type="button">Submit</button>
           </div>
         </form>
 

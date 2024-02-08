@@ -1,31 +1,17 @@
-mvc_gregslist
-============
+Gregslist fireside, errors guide
 
-### Get Started
 
-```terminal
-> npm i
-> npm run sass
-> npm run serve
-```
+- Router does not include full filepath for the cars view
+- Cars controller doesn't have a .js for the service import
+- Cars controller remove car doesn't pass id to service
+- Cars controller doesn't await the pop confirm
+- Cars Service doesn't export the const
+- Cars Service doesn't class the new car as a "new Car"
+- Cars Service splice, deletes all cars
+- Cars view form is missing name for make and model
+- Cars view form has a type button for the submit button
+- Cars service load cars does not load  "[Car]" but "new Car()"
+- Cars service compares carId to carId so only the first car can be deleted
+- Car template onclick is missing extra ''
+- Car service if for index check has 1 =
 
-### AuthConfig
-
-Fill in your AuthConfig with keys from [Auth0](https://auth0.com/)
-
-```javascript
-export const domain = '' 
-export const clientId = '' 
-export const audience = '' 
-```
-## Legal Overview
-
-The content under the CodeWorks®, LLC Organization and all of the individual repos are solely intended for use by CodeWorks Instruction to deliver Educational content to CodeWorks Students.
-
----
-
-## Copyright
-
-© CodeWorks® LLC, 2021. Unauthorized use and/or duplication of this material without express and written permission from CodeWorks, LLC is strictly prohibited.
-
-<img src="https://bcw.blob.core.windows.net/public/img/7815839041305055" width="125">

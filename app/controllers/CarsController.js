@@ -1,5 +1,5 @@
 import { AppState } from "../AppState.js";
-import { carsService } from "../services/CarsService.js";
+import { carsService } from "../services/CarsService";
 import { getFormData } from "../utils/FormHandler.js";
 import { Pop } from "../utils/Pop.js";
 import { setHTML } from "../utils/Writer.js";
@@ -25,7 +25,7 @@ export class CarsController {
 
 
     // ANCHOR listeners
-    AppState.on('cars', _drawCars)
+    AppState.on('push', _drawCars)
   }
 
   createCar() {
@@ -63,10 +63,10 @@ export class CarsController {
   }
 
   // NOTE need to make this method async if using Pop.confirm utility
-  async removeCar(carId) {
+   removeCar(carId) {
 
     // NOTE await the Pop.confirm promise to resolve before moving beyond this line
-    const wantsToRemove = await Pop.confirm('Are you sure you want to delete this car?')
+    const wantsToRemove =  Pop.confirm('Are you sure you want to delete this car?')
 
     // NOTE if you use the window.confirm, you do not need async/await. It's just uglier 🤷
     // const wantsToRemove = window.confirm('Are you sure you want to delete this car?')
@@ -78,6 +78,6 @@ export class CarsController {
 
     console.log('removing car with this id', carId);
 
-    carsService.removeCar(carId)
+    carsService.removeCar()
   }
 }

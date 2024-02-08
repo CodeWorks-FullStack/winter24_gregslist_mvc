@@ -1,4 +1,5 @@
-import { generateId } from "../utils/GenerateId.js"
+import { generateId } from "../utils/GenerateId"
+import Logger from 'sass'
 
 export class Car {
 
@@ -44,7 +45,7 @@ export class Car {
             ${this.SalvagedTitleIcon}
           </div>
           <div>
-            <button onclick="app.CarsController.removeCar('${this.id}')" class="btn btn-danger">Delete Car</button>
+            <button onclick="app.CarsController.removeCar(${this.id})" class="btn btn-danger">Delete Car</button>
           </div>
         </div>
       </div>
