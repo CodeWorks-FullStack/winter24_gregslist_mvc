@@ -31,7 +31,7 @@ class CarsService {
     // NOTE function to bring data out of local storage
     // NOTE the first argument is the key that we are storing our data at. This should match the key provided to saveState
     // NOTE the second argument is the instance type that we want our data converted into from localstorage. We want to turn the pojos from local storage into an array of cars
-    const carsFromLocalStorage = loadState('cars', Car)
+    const carsFromLocalStorage = loadState('cars', [Car])
     AppState.cars = carsFromLocalStorage
   }
 
